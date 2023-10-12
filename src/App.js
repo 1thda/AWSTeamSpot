@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { API, graphqlOperation } from 'aws-amplify';
-import { listPastIssuesStorages } from "./queries";
+//import { API, graphqlOperation } from 'aws-amplify';
+//import { listPastIssuesStorages } from "./queries";
 //getPastIssuesStorage
 
 
@@ -19,16 +19,16 @@ const App = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect( () => {
-        fetchArticles()
+        //fetchArticles()
     },[])
 
    // List all items
-   const fetchArticles = async () => {
-        try { const allPastIssuesStorages = await API.graphql(graphqlOperation(listPastIssuesStorages));
-            console.log(allPastIssuesStorages);
-            setArticles(allPastIssuesStorages.data.listPastIssuesStorages)
-        } catch (error){}
-    }   
+   //const fetchArticles = async () => {
+        //try { const allPastIssuesStorages = await API.graphql(graphqlOperation(listPastIssuesStorages));
+            //console.log(allPastIssuesStorages);
+            //setArticles(allPastIssuesStorages.data.listPastIssuesStorages)
+        //} catch (error){}
+    //}   
 
     //const searchArticles = (e) => {
         //e.preventDefault()
