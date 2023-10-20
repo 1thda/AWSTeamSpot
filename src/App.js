@@ -1,16 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { API } from 'aws-amplify';
-import { listPreviousIssueArchives } from "./graphql/queries";
-import { Filters, SearchBar} from './ui-components';
-
-//getPastIssuesStorage
-
 
 import ArticleCard from './ArticleCard';
 import NavBar from './NavBar';
 
 import './App.css';
+
+import { listPreviousIssueArchives } from "./graphql/queries";
+import { Filters, SearchBar} from './ui-components';
+
+import { API } from 'aws-amplify';
+
 
 
 const App = () => {
