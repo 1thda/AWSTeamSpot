@@ -22,7 +22,7 @@ body {
 }
 
 
-.Navbar {
+.navbar {
     width: 100%;
 
     padding-bottom: 1rem;
@@ -30,39 +30,31 @@ body {
 
     background: #ffffff;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-    /*box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;*/
 
 }
 
-.Navbar div:nth-of-type(1){
+.navbar div:nth-of-type(1){
     padding-right: 1rem;
     padding-top: 0.5rem;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+
+}
+
+.navbar div:nth-of-type(1) img {
+    width: 30%;
 }
 
 
-.Navbar div:nth-of-type(2) {
+.menubar {
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.Navbar div:nth-of-type(2) img {
-    width: 250px;
-    
-}
-
-.Menubar {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Menubar ul{
+.menubar ul{
     list-style-type: none;
 
     display: flex;
@@ -70,13 +62,13 @@ body {
     align-items: center;
 }
 
-.Menuitem {
+.menuitem {
 
     margin: 1rem 1.8rem;
     
 }
 
-.Menuitem a{
+.menuitem a{
     text-decoration: none;
 
     font-size: 1.2rem;
@@ -86,49 +78,25 @@ body {
     
 }
 
-.Menuitem a:hover {
+.menuitem a:hover {
     text-decoration: underline;
     color: #3390e7;
 }
 
-.searchdiv {
-
+.filters{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    align-content: center;
+
+    padding-left: 1rem;
 }
 
-.search {
-    width: 71%;
-    margin: 4rem 0 2rem;
-
+.search{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    align-content: center;
 
-    padding: 1.2rem 1.75rem;
-    border-radius: 3rem;
-    background: #ffffff;
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-}
-
-.search input {
-    flex: 1;
-    border: none;
-    font-size: 1.5rem;
-    font-family: var(--font-raleway);
-    font-weight: 500;
     padding-right: 1rem;
-
-    outline: none;
-    color: #a1a1a1;
-    background: #ffffff;
-}
-
-.search img {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
 }
 
 .empty {

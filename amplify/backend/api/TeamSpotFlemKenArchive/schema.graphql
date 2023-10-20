@@ -1,0 +1,18 @@
+enum Season {
+  SPRING
+  SUMMER
+  AUTUMN
+  WINTER
+}
+
+type PreviousIssueArchive @model @auth(rules: [{allow: public, provider: iam}]) {
+  id: ID!
+  MagazineID: Int
+  Season: Season
+  Year: Int
+  Tags: String
+  Title: String
+  CoverLink: AWSURL
+  PageLink: AWSURL
+}
+ 

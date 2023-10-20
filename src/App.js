@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-//import { API, graphqlOperation } from 'aws-amplify';
-//import { listPastIssuesStorages } from "./queries";
+import { API } from 'aws-amplify';
+import { listPreviousIssueArchives } from "./graphql/queries";
+import { Filters, SearchBar} from './ui-components';
+
 //getPastIssuesStorage
 
 
@@ -9,26 +11,27 @@ import ArticleCard from './ArticleCard';
 import NavBar from './NavBar';
 
 import './App.css';
-import SearchIcon from './search.svg';
 
 
 const App = () => {
 
 
     const [articles, setArticles] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
+    //const [searchTerm, setSearchTerm] = useState('');
 
     useEffect( () => {
-        //fetchArticles()
+        fetchArticles()
     },[])
 
    // List all items
-   //const fetchArticles = async () => {
-        //try { const allPastIssuesStorages = await API.graphql(graphqlOperation(listPastIssuesStorages));
-            //console.log(allPastIssuesStorages);
-            //setArticles(allPastIssuesStorages.data.listPastIssuesStorages)
-        //} catch (error){}
-    //}   
+   const fetchArticles = async () => {
+    const allPreviousIssueArchives = await API.graphql({
+        query: listPreviousIssueArchives,
+        authMode: "API_KEY"
+    });
+    console.log(allPreviousIssueArchives);
+    setArticles(allPreviousIssueArchives.data.listPreviousIssueArchives)
+    }
 
     //const searchArticles = (e) => {
         //e.preventDefault()
@@ -42,21 +45,20 @@ const App = () => {
             <div className="app">
 
                 <NavBar />
-                <div className='searchdiv'>
-                    <div className="search">
-                        <input 
-                            placeholder="Search for past issues"
-                            value = {searchTerm}
-                            onChange={(e) => {setSearchTerm(e.target.value)}}
-                            
-                        />
-                        <img 
-                            src={SearchIcon}
-                            alt="search"
-                            //onClick={() => axiosFetchData(searchTerm)}
-                        />
-                    </div>
+
+                <div className='empty'></div>
+
+                <div className='search'>
+                    <SearchBar />
                 </div>
+
+                <div className='empty'></div>
+
+                
+                <div className='filters'>
+                    <Filters/>
+                </div>
+
                 
                 {articles?.length > 0
                     ?(

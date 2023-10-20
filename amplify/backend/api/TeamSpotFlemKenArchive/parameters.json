@@ -1,0 +1,6 @@
+{
+  "AppSyncApiName": "TeamSpotFlemKenArchive",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2023-10-19T22:25:41.063Z"
+}

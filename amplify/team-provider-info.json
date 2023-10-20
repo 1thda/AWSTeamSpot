@@ -1,0 +1,26 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-teamspotflemkenarchi-staging-01738-authRole",
+      "UnauthRoleArn": "arn:aws:iam::728837835534:role/amplify-teamspotflemkenarchi-staging-01738-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::728837835534:role/amplify-teamspotflemkenarchi-staging-01738-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-teamspotflemkenarchi-staging-01738-deployment",
+      "UnauthRoleName": "amplify-teamspotflemkenarchi-staging-01738-unauthRole",
+      "StackName": "amplify-teamspotflemkenarchi-staging-01738",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:728837835534:stack/amplify-teamspotflemkenarchi-staging-01738/c0339ac0-6894-11ee-83b8-066f3d790432",
+      "AmplifyAppId": "d2ku3dr1cd9euk"
+    },
+    "categories": {
+      "auth": {
+        "TeamSpotFlemKenArchive": {}
+      },
+      "storage": {
+        "s3teamspotflemkenarchivestoragef7d773c0": {}
+      },
+      "api": {
+        "TeamSpotFlemKenArchive": {}
+      }
+    }
+  }
+}
