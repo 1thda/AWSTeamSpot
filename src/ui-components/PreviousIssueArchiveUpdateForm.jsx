@@ -14,8 +14,7 @@ import {
   TextField,
   useTheme,
 } from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { getPreviousIssueArchive } from "../graphql/queries";
 import { updatePreviousIssueArchive } from "../graphql/mutations";
@@ -236,28 +235,7 @@ export default function PreviousIssueArchiveUpdateForm(props) {
         errorMessage={errors.Season?.errorMessage}
         hasError={errors.Season?.hasError}
         {...getOverrideProps(overrides, "Season")}
-      >
-        <option
-          children="Spring"
-          value="SPRING"
-          {...getOverrideProps(overrides, "Seasonoption0")}
-        ></option>
-        <option
-          children="Summer"
-          value="SUMMER"
-          {...getOverrideProps(overrides, "Seasonoption1")}
-        ></option>
-        <option
-          children="Autumn"
-          value="AUTUMN"
-          {...getOverrideProps(overrides, "Seasonoption2")}
-        ></option>
-        <option
-          children="Winter"
-          value="WINTER"
-          {...getOverrideProps(overrides, "Seasonoption3")}
-        ></option>
-      </SelectField>
+      ></SelectField>
       <TextField
         label="Year"
         descriptiveText="E.g. 2023"

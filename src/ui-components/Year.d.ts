@@ -17,13 +17,13 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type SearchBarOverridesProps = {
-    SearchBar?: PrimitiveOverrideProps<ViewProps>;
-    "Rectangle 2"?: PrimitiveOverrideProps<ViewProps>;
+export declare type YearOverridesProps = {
+    Year?: PrimitiveOverrideProps<ViewProps>;
+    "Rectangle 3"?: PrimitiveOverrideProps<ViewProps>;
+    Year3612?: PrimitiveOverrideProps<TextProps>;
     Vector?: PrimitiveOverrideProps<IconProps>;
-    "Search past articles"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type SearchBarProps = React.PropsWithChildren<Partial<ViewProps> & {
-    overrides?: SearchBarOverridesProps | undefined | null;
+export declare type YearProps = React.PropsWithChildren<Partial<ViewProps> & {
+    overrides?: YearOverridesProps | undefined | null;
 }>;
-export default function SearchBar(props: SearchBarProps): React.ReactElement;
+export default function Year(props: YearProps): React.ReactElement;

@@ -1,6 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Amplify } from 'aws-amplify';
+import awsmobile from './aws-exports';
+
+//ReactDOM.render(<App />, document.getElementById('root'));
+
+Amplify.configure(awsmobile);
+
+
+createRoot(document.getElementById('root')).render(<App />);

@@ -5,8 +5,17 @@
  **************************************************************************/
 
 import * as React from "react";
-import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+export declare type EscapeHatchProps = {
+    [elementHierarchy: string]: Record<string, unknown>;
+} | null;
+export declare type VariantValues = {
+    [key: string]: string;
+};
+export declare type Variant = {
+    variantValues: VariantValues;
+    overrides: EscapeHatchProps;
+};
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type FiltersOverridesProps = {
     Filters?: PrimitiveOverrideProps<ViewProps>;
@@ -29,6 +38,8 @@ export declare type FiltersOverridesProps = {
     Vector652?: PrimitiveOverrideProps<IconProps>;
 } & EscapeHatchProps;
 export declare type FiltersProps = React.PropsWithChildren<Partial<ViewProps> & {
+    previousIssueArchive?: any;
+} & {
     overrides?: FiltersOverridesProps | undefined | null;
 }>;
 export default function Filters(props: FiltersProps): React.ReactElement;

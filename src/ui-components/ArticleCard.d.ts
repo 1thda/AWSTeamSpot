@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -17,13 +17,17 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type SearchBarOverridesProps = {
-    SearchBar?: PrimitiveOverrideProps<ViewProps>;
-    "Rectangle 2"?: PrimitiveOverrideProps<ViewProps>;
-    Vector?: PrimitiveOverrideProps<IconProps>;
-    "Search past articles"?: PrimitiveOverrideProps<TextProps>;
+export declare type ArticleCardOverridesProps = {
+    "2023"?: PrimitiveOverrideProps<TextProps>;
+    ArticleCard?: PrimitiveOverrideProps<ViewProps>;
+    "WINTER2023 1"?: PrimitiveOverrideProps<ImageProps>;
+    "Rectangle 4"?: PrimitiveOverrideProps<ViewProps>;
+    WINTER?: PrimitiveOverrideProps<TextProps>;
+    "Celebrating volunteers in Flemington Kensington"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type SearchBarProps = React.PropsWithChildren<Partial<ViewProps> & {
-    overrides?: SearchBarOverridesProps | undefined | null;
+export declare type ArticleCardProps = React.PropsWithChildren<Partial<ViewProps> & {
+    previousIssueArchive?: any;
+} & {
+    overrides?: ArticleCardOverridesProps | undefined | null;
 }>;
-export default function SearchBar(props: SearchBarProps): React.ReactElement;
+export default function ArticleCard(props: ArticleCardProps): React.ReactElement;

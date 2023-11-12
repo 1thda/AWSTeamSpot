@@ -6,15 +6,8 @@
 
 /* eslint-disable */
 import * as React from "react";
-import {
-  Button,
-  Flex,
-  Grid,
-  SelectField,
-  TextField,
-} from "@aws-amplify/ui-react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { fetchByPath, validateField } from "./utils";
+import { Button, Flex, Grid, TextField } from "@aws-amplify/ui-react";
+import { fetchByPath, getOverrideProps, validateField } from "./utils";
 import { API } from "aws-amplify";
 import { createPreviousIssueArchive } from "../graphql/mutations";
 export default function PreviousIssueArchiveCreateForm(props) {
@@ -184,10 +177,10 @@ export default function PreviousIssueArchiveCreateForm(props) {
         hasError={errors.MagazineID?.hasError}
         {...getOverrideProps(overrides, "MagazineID")}
       ></TextField>
-      <SelectField
+      <TextField
         label="Season"
-        placeholder="Please select an option"
-        isDisabled={false}
+        isRequired={false}
+        isReadOnly={false}
         value={Season}
         onChange={(e) => {
           let { value } = e.target;
@@ -213,28 +206,7 @@ export default function PreviousIssueArchiveCreateForm(props) {
         errorMessage={errors.Season?.errorMessage}
         hasError={errors.Season?.hasError}
         {...getOverrideProps(overrides, "Season")}
-      >
-        <option
-          children="Spring"
-          value="SPRING"
-          {...getOverrideProps(overrides, "Seasonoption0")}
-        ></option>
-        <option
-          children="Summer"
-          value="SUMMER"
-          {...getOverrideProps(overrides, "Seasonoption1")}
-        ></option>
-        <option
-          children="Autumn"
-          value="AUTUMN"
-          {...getOverrideProps(overrides, "Seasonoption2")}
-        ></option>
-        <option
-          children="Winter"
-          value="WINTER"
-          {...getOverrideProps(overrides, "Seasonoption3")}
-        ></option>
-      </SelectField>
+      ></TextField>
       <TextField
         label="Year"
         isRequired={false}
